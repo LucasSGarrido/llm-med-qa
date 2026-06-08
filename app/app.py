@@ -20,6 +20,7 @@ except ImportError:
 MODEL_ID = os.getenv("BASE_MODEL_ID", "meta-llama/Llama-3.2-3B-Instruct")
 ADAPTER_ID = os.getenv("ADAPTER_ID", "SoulLucas/llama-3.2-3b-medqa")
 MAX_NEW_TOKENS = int(os.getenv("MAX_NEW_TOKENS", "256"))
+HF_TOKEN = os.getenv("HF_TOKEN")  # required for gated base model
 
 SYSTEM_PROMPT = (
     "You are a helpful medical assistant. "
@@ -61,15 +62,16 @@ def _load_model() -> str | None:
         device = "cuda" if torch.cuda.is_available() else "cpu"
         dtype = torch.float16 if device == "cuda" else torch.float32
 
-        _tokenizer = AutoTokenizer.from_pretrained(ADAPTER_ID)
+        _tokenizer = AutoTokenizer.from_pretrained(ADAPTER_ID, token=HF_TOKEN)
         _tokenizer.pad_token = _tokenizer.eos_token
 
         base = AutoModelForCausalLM.from_pretrained(
             MODEL_ID,
             torch_dtype=dtype,
             device_map="auto" if device == "cuda" else None,
+            token=HF_TOKEN,
         )
-        _model = PeftModel.from_pretrained(base, ADAPTER_ID)
+        _model = PeftModel.from_pretrained(base, ADAPTER_ID, token=HF_TOKEN)
         _model.eval()
         return None  # success
     except Exception as exc:  # noqa: BLE001
