@@ -12,3 +12,9 @@ outputs/
 *.safetensors
 wandb/
 runs/
+.cache/
+hf_cache/
+logs/
+.DS_Store
+Thumbs.db
+*.gguf
