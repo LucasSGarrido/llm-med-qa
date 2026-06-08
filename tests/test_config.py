@@ -22,7 +22,7 @@ def test_training_defaults():
     """TrainingConfig aponta para Llama 3.2 3B e Hub do Lucas."""
     cfg = TrainingConfig()
     assert "Llama-3.2-3B" in cfg.model_id
-    assert "LucasSGarrido" in cfg.hub_model_id
+    assert "SoulLucas" in cfg.hub_model_id
     assert cfg.num_train_epochs == 2
     assert cfg.learning_rate == 2e-4
     assert cfg.max_seq_length == 1024

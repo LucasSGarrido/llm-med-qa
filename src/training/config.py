@@ -24,7 +24,7 @@ class TrainingConfig:
 
     model_id: str = "meta-llama/Llama-3.2-3B-Instruct"
     output_dir: str = "./checkpoints"
-    hub_model_id: str = "LucasSGarrido/llama-3.2-3b-medqa"
+    hub_model_id: str = "SoulLucas/llama-3.2-3b-medqa"
     num_train_epochs: int = 2
     per_device_train_batch_size: int = 4
     gradient_accumulation_steps: int = 4

@@ -21,7 +21,7 @@ MedAlpaca Dataset (HuggingFace)
    └─────────────────────────────┘
          ↓
    LoRA Adapter (HuggingFace Hub)
-   LucasSGarrido/llama-3.2-3b-medqa
+   SoulLucas/llama-3.2-3b-medqa
          ↓
    Gradio Interface (HF Spaces)
    app/app.py

@@ -18,7 +18,7 @@ except ImportError:
     HAS_DEPS = False
 
 MODEL_ID = os.getenv("BASE_MODEL_ID", "meta-llama/Llama-3.2-3B-Instruct")
-ADAPTER_ID = os.getenv("ADAPTER_ID", "LucasSGarrido/llama-3.2-3b-medqa")
+ADAPTER_ID = os.getenv("ADAPTER_ID", "SoulLucas/llama-3.2-3b-medqa")
 MAX_NEW_TOKENS = int(os.getenv("MAX_NEW_TOKENS", "256"))
 
 SYSTEM_PROMPT = (

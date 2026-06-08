@@ -1,6 +1,6 @@
 model:
   base_id: "meta-llama/Llama-3.2-3B-Instruct"
-  hub_id: "LucasSGarrido/llama-3.2-3b-medqa"
+  hub_id: "SoulLucas/llama-3.2-3b-medqa"
 
 lora:
   r: 16

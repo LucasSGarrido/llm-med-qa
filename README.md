@@ -4,7 +4,7 @@
 
 [![CI](https://github.com/LucasSGarrido/llm-med-qa/actions/workflows/ci.yml/badge.svg)](https://github.com/LucasSGarrido/llm-med-qa/actions)
 [![Python](https://img.shields.io/badge/python-3.10-blue)](https://www.python.org)
-[![HuggingFace](https://img.shields.io/badge/🤗-llama--3.2--3b--medqa-yellow)](https://huggingface.co/LucasSGarrido/llama-3.2-3b-medqa)
+[![HuggingFace](https://img.shields.io/badge/🤗-llama--3.2--3b--medqa-yellow)](https://huggingface.co/SoulLucas/llama-3.2-3b-medqa)
 
 ---
 
@@ -18,7 +18,7 @@ Modelos de linguagem gerais cometem erros em questões médicas especializadas �
 
 ## Demo ao Vivo
 
-**[Abrir no HuggingFace Spaces](https://huggingface.co/spaces/LucasSGarrido/llm-med-qa)** — disponível após treino
+**[Abrir no HuggingFace Spaces](https://huggingface.co/spaces/SoulLucas/llm-med-qa)** — disponível após treino
 
 ---
 
@@ -31,7 +31,7 @@ MedAlpaca (HuggingFace)
        ↓
   QLoRA Fine-tuning            ← Kaggle T4×2, 4-bit NF4, LoRA r=16
        ↓
-  LucasSGarrido/llama-3.2-3b-medqa  ← HuggingFace Hub
+  SoulLucas/llama-3.2-3b-medqa  ← HuggingFace Hub
        ↓
   Gradio Interface              ← HuggingFace Spaces
 ```

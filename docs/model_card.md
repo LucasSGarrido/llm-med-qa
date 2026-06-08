@@ -4,7 +4,7 @@ type: doc
 created: 2026-06-07
 ---
 
-# Model Card — LucasSGarrido/llama-3.2-3b-medqa
+# Model Card — SoulLucas/llama-3.2-3b-medqa
 
 ## Descrição do Modelo
 
@@ -40,13 +40,13 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from peft import PeftModel
 import torch
 
-tokenizer = AutoTokenizer.from_pretrained("LucasSGarrido/llama-3.2-3b-medqa")
+tokenizer = AutoTokenizer.from_pretrained("SoulLucas/llama-3.2-3b-medqa")
 base = AutoModelForCausalLM.from_pretrained(
     "meta-llama/Llama-3.2-3B-Instruct",
     torch_dtype=torch.float16,
     device_map="auto",
 )
-model = PeftModel.from_pretrained(base, "LucasSGarrido/llama-3.2-3b-medqa")
+model = PeftModel.from_pretrained(base, "SoulLucas/llama-3.2-3b-medqa")
 model.eval()
 ```
 
