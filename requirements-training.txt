@@ -1,0 +1,10 @@
+# Treino QLoRA (requer GPU — rodar no Kaggle)
+torch>=2.1
+transformers>=4.40
+peft>=0.10
+trl>=0.8
+bitsandbytes>=0.43
+accelerate>=0.29
+datasets>=2.18
+rouge-score>=0.1.2
+huggingface_hub>=0.22

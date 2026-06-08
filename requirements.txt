@@ -1,0 +1,8 @@
+# Dados e avaliação (sem GPU — para CI e dev local)
+datasets>=2.18
+rouge-score>=0.1.2
+
+# Qualidade e testes
+pytest>=8.0
+ruff>=0.1
+black>=24.0
