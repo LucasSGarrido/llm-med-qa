@@ -68,6 +68,8 @@ class MedQAPipeline:
         Returns:
             Generated answer string, decoded and stripped.
         """
+        if torch is None:  # pragma: no cover
+            raise ImportError("torch is required to run inference. Install requirements-training.txt.")
         prompt = self._build_prompt(question, context)
         inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
         with torch.no_grad():
