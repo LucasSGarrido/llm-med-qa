@@ -37,4 +37,5 @@ def test_rouge_l_empty_input():
 
 def test_exact_match_case_insensitive():
     """Exact match é case-insensitive e ignora espaços nas bordas."""
-    assert compute_exact_match(["aspirin", "Metformin"], ["Aspirin", "METFORMIN"]) == pytest.approx(1.0)
+    result = compute_exact_match(["aspirin", "Metformin"], ["Aspirin", "METFORMIN"])
+    assert result == pytest.approx(1.0)

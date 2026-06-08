@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock, patch
 
-from src.inference.pipeline import MedQAPipeline, SYSTEM_PROMPT
+from src.inference.pipeline import SYSTEM_PROMPT, MedQAPipeline
 
 
 def test_build_prompt_without_context():
