@@ -23,7 +23,7 @@ def load_medalpaca(
     return ds
 
 
-def format_instruction(example: dict) -> dict:
+def format_instruction(example: dict[str, str]) -> dict[str, str]:
     """Format a MedAlpaca example into Llama 3.2 Instruct chat format.
 
     Returns a dict with a single key ``text`` containing the fully-formatted

@@ -39,3 +39,30 @@ def test_load_medalpaca_calls_hf():
     with patch("src.data.dataset.load_dataset", return_value=mock_ds) as mock_load:
         load_medalpaca(max_samples=10)
         mock_load.assert_called_once_with(DATASET_ID, split="train")
+
+
+def test_prepare_dataset_returns_train_val_split():
+    """prepare_dataset retorna DatasetDict com chaves 'train' e 'validation'."""
+    from datasets import Dataset, DatasetDict
+
+    from src.data.dataset import prepare_dataset
+
+    # Create a small mock dataset with 20 examples
+    mock_data = [
+        {"instruction": f"Question {i}?", "input": "", "output": f"Answer {i}."}
+        for i in range(20)
+    ]
+    mock_ds = Dataset.from_list(mock_data)
+
+    # prepare_dataset calls load_medalpaca which calls load_dataset
+    # We mock at the load_dataset level
+    with patch("src.data.dataset.load_dataset", return_value=mock_ds):
+        result = prepare_dataset(max_train=15, max_val=5, seed=42)
+
+    assert isinstance(result, DatasetDict)
+    assert set(result.keys()) == {"train", "validation"}
+    # Combined size should be around max_train + max_val (may vary slightly due to shuffle)
+    assert len(result["train"]) + len(result["validation"]) == 20
+    # Each example should have only the "text" key after formatting
+    assert list(result["train"].column_names) == ["text"]
+    assert list(result["validation"].column_names) == ["text"]
